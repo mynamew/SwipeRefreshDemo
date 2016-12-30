@@ -15,7 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SVGActivity"></activity>
+        <activity android:name=".SVGActivity" />
+        <activity android:name=".ZxingScanActivity" />
+        <activity android:name=".mvp.views.EventTextActivity"></activity>
     </application>
 
 </manifest>
