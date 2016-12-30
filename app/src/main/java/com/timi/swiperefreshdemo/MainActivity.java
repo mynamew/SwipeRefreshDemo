@@ -10,13 +10,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.timi.swiperefreshdemo.base.BaseActivity;
 import com.timi.swiperefreshdemo.baseadapter.CommonSimpleTypeAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class MainActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
+public class MainActivity extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener {
     private RecyclerView recyclerView;
     private SwipeRefreshLayout refreshLayout;
     private MainAdapter mainAdapter;

@@ -3,9 +3,7 @@ package com.timi.swiperefreshdemo.base;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.timi.swiperefreshdemo.message.MTMessage;
 import com.timi.swiperefreshdemo.message.MessageEvent;
-import com.zhy.autolayout.AutoLayoutActivity;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -16,7 +14,7 @@ import org.greenrobot.eventbus.ThreadMode;
  * 事件总线的基类
  * Created by timi  on 2016/12/30.
  */
-public abstract class BaseEventActivity extends AutoLayoutActivity {
+public abstract class BaseEventActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
