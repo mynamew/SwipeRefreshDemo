@@ -1,84 +1,66 @@
 package com.timi.swiperefreshdemo;
 
-import android.os.Handler;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
 
+import com.timi.bottomnavigationview.BottomNavigationItem;
+import com.timi.bottomnavigationview.BottomNavigationView;
+import com.timi.bottomnavigationview.OnBottomNavigationItemClickListener;
 import com.timi.swiperefreshdemo.base.BaseActivity;
-import com.timi.swiperefreshdemo.baseadapter.CommonSimpleTypeAdapter;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
-public class MainActivity extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener {
-    private RecyclerView recyclerView;
-    private SwipeRefreshLayout refreshLayout;
-    private MainAdapter mainAdapter;
-    private List<String> datas;
+public class MainActivity extends BaseActivity {
+    private BottomNavigationView bottomNavigationView;
+    int[] image = {R.drawable.ic_home, R.drawable.ic_favorite_black_24dp,
+            R.drawable.ic_book_black_24dp, R.drawable.ic_user};
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        initView();
+    public int setLayoutId() {
+        return R.layout.activity_main;
     }
 
-    private void initView() {
-        datas = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            datas.add(i + "");
-        }
-        refreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeRefreshLayout);
-        refreshLayout.setColorSchemeResources(R.color.colorAccent, R.color.colorPrimary, R.color.colorPrimaryDark);
-        refreshLayout.setOnRefreshListener(this);
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        mainAdapter = new MainAdapter(datas);
-        mainAdapter.setOnItemClickListener(R.id.id_text, new CommonSimpleTypeAdapter.ItemClickListener() {
-            @Override
-            public void onItemClicked(View view, int position) {
-                Log.e("点击", "root clicked..." + position);
-            }
-        });
-        mainAdapter.setOnItemClickListener(R.id.icon, new CommonSimpleTypeAdapter.ItemClickListener() {
-            @Override
-            public void onItemClicked(View view, int position) {
-                Log.e("点击", "root clicked..." + position);
-            }
-        });
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(mainAdapter);
-    }
-
-    /**
-     * 刷新的方法
-     */
     @Override
-    public void onRefresh() {
-        final Random random = new Random();
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                datas.add(0, "我是天才" + random.nextInt(100) + "号");
-                mainAdapter.notifyDataSetChanged();
-
-                Toast.makeText(MainActivity.this, "刷新了一条数据", Toast.LENGTH_SHORT).show();
-
-                // 加载完数据设置为不刷新状态，将下拉进度收起来
-                refreshLayout.setRefreshing(false);
-            }
-        }, 1200);
-        try {
-            Thread.sleep(2000);
-            refreshLayout.setRefreshing(true);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+    public void initView() {
+        int[] color = {getResources().getColor(R.color.firstColor), getResources().getColor(R.color.secondColor),
+                getResources().getColor(R.color.thirdColor), getResources().getColor(R.color.fourthColor)};
+        bottomNavigationView = (BottomNavigationView) findViewById(R.id.home_bottomNavigation);
+        if (bottomNavigationView != null) {
+            bottomNavigationView.isWithText(false);
+            // bottomNavigationView.activateTabletMode();
+            bottomNavigationView.isColoredBackground(true);
+            bottomNavigationView.setTextActiveSize(getResources().getDimension(R.dimen.text_active));
+            bottomNavigationView.setTextInactiveSize(getResources().getDimension(R.dimen.text_inactive));
+            bottomNavigationView.setItemActiveColorWithoutColoredBackground(getResources().getColor(R.color.firstColor));
         }
+
+        BottomNavigationItem bottomNavigationItem = new BottomNavigationItem
+                ("主页", color[0], image[0]);
+        BottomNavigationItem bottomNavigationItem1 = new BottomNavigationItem
+                ("收藏", color[1], image[1]);
+        BottomNavigationItem bottomNavigationItem2 = new BottomNavigationItem
+                ("发现", color[2], image[2]);
+        BottomNavigationItem bottomNavigationItem3 = new BottomNavigationItem
+                ("我的", color[3], image[3]);
+
+
+        bottomNavigationView.addTab(bottomNavigationItem);
+        bottomNavigationView.addTab(bottomNavigationItem1);
+        bottomNavigationView.addTab(bottomNavigationItem2);
+        bottomNavigationView.addTab(bottomNavigationItem3);
+
+        bottomNavigationView.setOnBottomNavigationItemClickListener(new OnBottomNavigationItemClickListener() {
+            @Override
+            public void onNavigationItemClick(int index) {
+                switch (index) {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                }
+            }
+        });
+
     }
+
 }

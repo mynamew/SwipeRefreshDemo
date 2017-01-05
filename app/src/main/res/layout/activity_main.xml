@@ -1,38 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:toolbar="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.timi.swiperefreshdemo.MainActivity">
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_title"
-        android:background="@color/colorPrimaryDark"
+    <com.timi.bottomnavigationview.BottomNavigationView
+        android:id="@+id/home_bottomNavigation"
         android:layout_width="match_parent"
-        toolbar:navigationIcon="@drawable/left_back"
-        android:layout_height="120px">
-
-    </android.support.v7.widget.Toolbar>
-
-
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/swipeRefreshLayout"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+    <FrameLayout
+        android:id="@+id/fl_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbar_title">
+        android:layout_above="@id/home_bottomNavigation"></FrameLayout>
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </android.support.v4.widget.SwipeRefreshLayout>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="120px"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/button_bg"
-        android:text="测试EventVys"
-        android:textColor="@color/white" />
+
 </RelativeLayout>
