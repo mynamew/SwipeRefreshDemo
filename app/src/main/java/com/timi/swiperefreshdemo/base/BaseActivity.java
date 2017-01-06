@@ -14,7 +14,9 @@ public  abstract class BaseActivity extends AutoLayoutActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(setLayoutId());
+        initBundle();
         initView();
+        initData();
     }
     @Override
     protected void onResume() {
@@ -31,9 +33,17 @@ public  abstract class BaseActivity extends AutoLayoutActivity {
      * @return
      */
     public abstract int setLayoutId();
+    /**
+     * 初始化bundle
+     */
+    public abstract void initBundle();
 
     /**
      * 初始化view
      */
     public abstract void initView();
+    /**
+     * 初始化data
+     */
+    public abstract void initData();
 }

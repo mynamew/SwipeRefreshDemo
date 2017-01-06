@@ -7,13 +7,15 @@ import com.timi.swiperefreshdemo.R;
 import com.timi.swiperefreshdemo.base.BaseFragment;
 
 /**
- * Created by timi on 2017/1/4.
- * to do:  Android Fragment
+ * Created by timi on 2017/1/6.
+ * to do:  百思不得姐
  */
-public class AndroidFragment extends BaseFragment {
+
+public class JokeFragment extends BaseFragment {
+
     @Override
     protected int setFragmentLayoutId() {
-        return R.layout.fragment_android;
+        return R.layout.fragment_joke;
     }
 
     @Override
@@ -27,7 +29,7 @@ public class AndroidFragment extends BaseFragment {
     }
 
     @Override
-    protected void setOnclickListener() {
+    protected void setOnclickListener(View view) {
 
     }
 }

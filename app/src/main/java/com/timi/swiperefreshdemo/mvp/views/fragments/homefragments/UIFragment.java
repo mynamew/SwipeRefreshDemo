@@ -1,4 +1,4 @@
-package com.timi.swiperefreshdemo.mvp.views.fragments;
+package com.timi.swiperefreshdemo.mvp.views.fragments.homefragments;
 
 import android.os.Bundle;
 import android.view.View;
@@ -27,7 +27,8 @@ public class UIFragment extends BaseFragment {
     }
 
     @Override
-    protected void setOnclickListener() {
+    protected void setOnclickListener(View view) {
 
     }
+
 }

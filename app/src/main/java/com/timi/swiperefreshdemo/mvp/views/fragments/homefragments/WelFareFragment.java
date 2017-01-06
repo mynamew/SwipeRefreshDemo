@@ -1,4 +1,4 @@
-package com.timi.swiperefreshdemo.mvp.views.fragments;
+package com.timi.swiperefreshdemo.mvp.views.fragments.homefragments;
 
 import android.os.Bundle;
 import android.view.View;
@@ -8,12 +8,12 @@ import com.timi.swiperefreshdemo.base.BaseFragment;
 
 /**
  * Created by timi on 2017/1/4.
- * to do: 全部的干货
+ * to do:  福利的碎片
  */
-public class AllFragment extends BaseFragment {
+public class WelFareFragment extends BaseFragment {
     @Override
     protected int setFragmentLayoutId() {
-        return R.layout.fragment_hot;
+        return R.layout.fragment_welfare;
     }
 
     @Override
@@ -27,7 +27,8 @@ public class AllFragment extends BaseFragment {
     }
 
     @Override
-    protected void setOnclickListener() {
+    protected void setOnclickListener(View view) {
 
     }
+
 }

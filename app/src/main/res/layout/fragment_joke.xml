@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_joke_title"
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:background="@color/sienna">
+
+        <ImageView
+            android:id="@+id/iv_joke_sort"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:paddingLeft="20px"
+            android:paddingRight="20px"
+            android:src="@drawable/ic_menu" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="百思不得姐"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/iv_joke_history"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="20px"
+            android:paddingRight="20px"
+            android:src="@drawable/ic_history"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_joke_title"
+        android:orientation="vertical">
+
+        <com.flyco.tablayout.SlidingTabLayout
+            android:id="@+id/slidinglayout_joke"
+            android:layout_width="match_parent"
+
+            android:layout_height="100px"
+            tl:tl_indicator_color="@color/sienna"
+
+            tl:tl_indicator_width_equal_title="true"
+            tl:tl_tab_padding="20px"
+            tl:tl_tab_space_equal="true"
+            tl:tl_textSelectColor="@color/sienna"
+            tl:tl_textUnselectColor="@color/darkgrey"
+            tl:tl_textsize="14sp"
+            tl:tl_underline_color="@color/darkgrey" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager_joke"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_joke_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="20px"
+        android:src="@drawable/ic_refresh_bottom"
+        app:backgroundTint="@color/sienna"
+        app:elevation="6dp"
+        app:fabSize="normal"
+        app:pressedTranslationZ="25dp"
+        app:rippleColor="@color/sienna" />
+</RelativeLayout>

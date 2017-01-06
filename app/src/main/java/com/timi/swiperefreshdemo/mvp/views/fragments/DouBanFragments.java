@@ -7,13 +7,14 @@ import com.timi.swiperefreshdemo.R;
 import com.timi.swiperefreshdemo.base.BaseFragment;
 
 /**
- * Created by timi on 2017/1/4.
- * to do:  ios
+ * Created by timi on 2017/1/6.
+ * to do:  豆瓣视频列表
  */
-public class IosFragment extends BaseFragment {
+
+public class DouBanFragments extends BaseFragment {
     @Override
     protected int setFragmentLayoutId() {
-        return R.layout.fragment_ios;
+        return R.layout.fragment_douban;
     }
 
     @Override
@@ -27,7 +28,7 @@ public class IosFragment extends BaseFragment {
     }
 
     @Override
-    protected void setOnclickListener() {
+    protected void setOnclickListener(View view) {
 
     }
 }

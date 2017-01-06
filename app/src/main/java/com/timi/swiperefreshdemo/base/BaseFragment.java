@@ -33,7 +33,7 @@ public abstract class BaseFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initView(view, savedInstanceState);//初始化view
-        setOnclickListener();
+        setOnclickListener(view);
     }
 
     @Override
@@ -62,5 +62,5 @@ public abstract class BaseFragment extends Fragment {
     /**
      * 设置监听器
      */
-    protected  abstract void setOnclickListener();
+    protected  abstract void setOnclickListener(View view);
 }

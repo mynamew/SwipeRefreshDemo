@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="400px"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="20px"
+        android:padding="20px"
+        app:cardBackgroundColor="@color/indianred"
+        app:cardCornerRadius="10px">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="20px">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="20px"
+                    android:src="@drawable/ic_title" />
+
+                <TextView
+                    android:id="@+id/tv_all_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10px"
+                    android:gravity="center_vertical"
+                    android:padding="20px"
+                    android:text="标题"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100px"
+                android:gravity="center_vertical"
+                android:padding="20px">
+
+                <TextView
+                    android:id="@+id/tv_all_time"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:drawablePadding="10px"
+                    android:gravity="center_vertical"
+                    android:text="2016.7.16"
+                    android:textColor="@color/whitesmoke"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_all_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="20px"
+                    android:layout_toLeftOf="@id/tv_all_time"
+                    android:drawableLeft="@drawable/ic_gank_user"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="timi"
+                    android:textColor="@color/whitesmoke" />
+
+
+            </RelativeLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>
